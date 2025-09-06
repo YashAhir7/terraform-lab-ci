@@ -30,4 +30,8 @@ module "jenkins-lab-dev" {
 
 module "jenkins-lab-prod" {
   source = "./modules/prod"
+  # Define prod modules variables values in terraform
+  vpc_prod_cidr = "10.20.0.0/16"
+  vpc_prod_subnet_cidr = ["10.20.1.0/24", "10.20.2.0/24" , "10.20.3.0/24" , "10.20.4.0/24"]
+  vpc_prod_subnet_az = ["ap-south-1a" , "ap-south-1b"]
 }
